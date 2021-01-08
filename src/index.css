@@ -7,85 +7,196 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     margin: 0;
     padding: 16px 0;
-    font-size: 1.6rem;
+    box-sizing: border-box;
+    font-size: 1.8rem;
     font-family: 'Karla', sans-serif;
+    height: 100%;
+}
+
+.info {
+    padding-bottom: 15px;
 }
 
 .info__title{
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     color: var(--cyan);
-    margin: 16px 0 17px 25px;
+    margin: 16px 0 20px 25px;
 }
 
 .info__subtitle {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: var(--bright-yellow);
-    margin: 17px 0 15px 25px;
+    margin: 20px 0 18px 25px;
+    width: 74%;
 }
 
 .info__paragraph {
-    font-size: 1.1rem;
-    margin: 15px 25px;
+    font-size: 1.5rem;
+    margin: 18px 25px;
     color: var(--grayish-blue);
 }
 
 .subscription {
     color: white;
     background-color: var(--cyan);
+    padding-top: 10px;
 }
 
 .subscription__title {
-    font-size: 1.4rem;
+    font-size: 2.1rem;
     margin: 0px 25px 15px 25px;
     padding-top: 15px;
 }
 
 .subscription__price p{
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-top: 15px;
     margin-left: 25px;
+    margin-bottom: 10px;
 }
 
 .subscription__price p span {
-    font-size: 1.1rem;
+    font-size: 1.8rem;
     color: var(--light-gray);
-    margin-left: 15px;
+    margin-left: 10px;
     margin-bottom: 10px;
 }
 
 .subscription__info {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    font-size: 1.8rem;
     margin-left: 25px;
 }
 
 .subscription__button {
-    height: 50px;
-    width: 265px;
+    height: 55px;
+    width: 86.5%;
     padding: 0;
     background-color: var(--bright-yellow);
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     color: white;
     border: 0;
     border-radius: 5px;
     text-align: center;
     margin-left: 25px;
-    margin-top: 17px;
-    margin-bottom: 24px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    outline: none;
+}
+
+.subscription__button:hover {
+    transition: .3s;
+    background-color: hsl(71, 58%, 44%);
+    color: gray;
 }
 
 .about {
     background-color: var(--cyan);
+    padding-bottom: 30px;
 }
 
 .about__title {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 2.1rem;
     color: white;
     margin-left: 25px;
+    padding-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about__paragraph {
+    margin-top: 18px;
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 25px;
+    line-height: 1.7;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 50% 50%;
+        grid-template-areas: "info info"
+                             "subscription why-us";
+        padding: 0;
+    }
+
+    .info {
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 50px;
+        padding: 0;
+    }
+
+    .info__title {
+        font-size: 3.5rem;
+        margin-left: 0;
+    }
+
+    .info__subtitle {
+        font-size: 2.3rem;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .info__paragraph {
+        font-size: 2rem;
+        line-height: 1.6;
+        margin-left: 0;
+    }
+
+    .subscription {
+        grid-area: subscription;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 50px;
+    }
+
+    .subscription__title {
+        font-size: 2.3rem;
+        margin-bottom: 5px;
+        margin-left: 0;
+    }
+
+    .subscription__price p {
+        font-size: 4rem;
+        margin-left: 0;
+    }
+
+    .subscription__price p span {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    .subscription__info {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .subscription__button {
+        margin-left: 0;
+        max-width: 440px;
+    }
+
+    .about {
+        grid-area: why-us;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .about__title {
+        font-size: 2.3rem;
+    }
 }
